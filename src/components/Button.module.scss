@@ -1,0 +1,13 @@
+.btnCustom {
+	background-color: red;
+	color: white;
+	border-radius: 6px;
+	border: 1px solid red;
+	padding: 12px 24px;
+	min-width: 40px;
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		background-color: white;
+		color: red;
+	}
+}
