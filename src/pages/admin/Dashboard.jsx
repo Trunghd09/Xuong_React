@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Dashboard = ({ data, remove }) => {
+const Dashboard = ({ data }) => {
 	console.log(data);
 	return (
 		<div>
 			<h1>Hello, admin</h1>
-			<Link to="/admin/product-form" className="btn btn-primary">
+			<Link to="/admin/product-add" className="btn btn-primary">
 				Add new product
 			</Link>
 			<table className="table table-bordered table-striped text-center">
@@ -29,12 +29,8 @@ const Dashboard = ({ data, remove }) => {
 							<td>{p.description || "Dang cap nhat"}</td>
 							<td>{p.thumbnail ? <img src={p.thumbnail} alt="Dang cap nhat" /> : "Dang cap nhat"}</td>
 							<td>
-								<button className="btn btn-danger" onClick={() => remove(p.id)}>
-									Delete
-								</button>
-								<Link to={`/admin/product-form/${p.id}`} className="btn btn-warning">
-									Edit
-								</Link>
+								<button className="btn btn-danger">Delete</button>
+								<button className="btn btn-warning">Edit</button>
 							</td>
 						</tr>
 					))}

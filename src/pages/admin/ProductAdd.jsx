@@ -1,38 +1,30 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import productSchema from "../../schemaValid/productSchema";
+import React from "react";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 
-const ProductForm = ({ onProduct }) => {
-	const { id } = useParams();
+const productSchema = z.object({
+	title: z.string().min(5).max(100),
+	price: z.number().min(0),
+	description: z.string().optional(),
+});
+
+const ProductAdd = ({ onAdd }) => {
 	const {
 		register,
-		formState: { errors },
 		handleSubmit,
-		reset,
-	} = useForm({ resolver: zodResolver(productSchema) });
-
-	if (id) {
-		useEffect(() => {
-			(async () => {
-				try {
-					const { data } = await instance.get(`/products/${id}`);
-					reset(data);
-				} catch (error) {
-					console.log(error);
-				}
-			})();
-		}, []);
-	}
-
+		formState: { errors },
+	} = useForm({
+		resolver: zodResolver(productSchema),
+	});
 	const onSubmit = (data) => {
-		onProduct({ ...data, id });
+		console.log(data);
+		onAdd(data);
 	};
 	return (
-		<>
+		<div>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<h1>{id ? "Product Edit" : "Product Add"}</h1>
+				<h1>Product Add</h1>
 				<div className="mb-3">
 					<label htmlFor="title" className="form-label">
 						Title
@@ -61,12 +53,12 @@ const ProductForm = ({ onProduct }) => {
 				</div>
 				<div className="mb-3">
 					<button className="btn btn-primary w-100" type="submit">
-						{id ? "Product Edit" : "Product Add"}
+						Add Product
 					</button>
 				</div>
 			</form>
-		</>
+		</div>
 	);
 };
 
-export default ProductForm;
+export default ProductAdd;
