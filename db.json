@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "title": "iPhone 9",
+      "title": "iPhone 95",
       "description": "An apple mobile which is nothing like apple",
       "price": 549,
       "discountPercentage": 12.96,
@@ -569,6 +569,19 @@
       "price": 2000,
       "description": "",
       "id": 33
+    },
+    {
+      "title": "Trung 10",
+      "price": 555,
+      "description": "hay quaaaa taaaa",
+      "id": 34
+    }
+  ],
+  "users": [
+    {
+      "email": "hoangductrung09112004@gmail.com",
+      "password": "$2a$10$2DJR0hGgqaOp/sid/X.NHejS7i2Oy1azQcnJZL2hg4jlM9fuW900G",
+      "id": 1
     }
   ]
 }

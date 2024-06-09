@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const Login = () => {
-	const nav = useNavigate()
+const Register = () => {
+    const nav = useNavigate();
 	const {
 		register,
 		handleSubmit,
@@ -19,12 +19,10 @@ const Login = () => {
 	const onSubmit = (data) => {
 		(async () =>{
             try {
-                await instance.post(`/login`, data);
-                // console.log(res);
-				if(confirm("Login successful, redirect home page?")){
-					nav("/home")
+                const res = await instance.post(`/register`, data);
+                if(confirm("Login successful, redirect Login?")){
+					nav("/login")
 				}
-
             } catch (error) {
                 console.log(error)
             }
@@ -34,7 +32,7 @@ const Login = () => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<h1>Login</h1>
+				<h1>Register</h1>
 				<div className="mb-3">
 					<label htmlFor="email" className="form-label">
 						email
@@ -59,4 +57,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default Register;
