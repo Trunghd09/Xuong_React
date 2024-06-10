@@ -582,6 +582,16 @@
       "email": "hoangductrung09112004@gmail.com",
       "password": "$2a$10$2DJR0hGgqaOp/sid/X.NHejS7i2Oy1azQcnJZL2hg4jlM9fuW900G",
       "id": 1
+    },
+    {
+      "email": "trunghytq@gmail.com",
+      "password": "$2a$10$0FE9cSfAKiybwPuWb4zuRO4yXoud1rZ5ayBvTXtPS3G5EHK7EVtVS",
+      "id": 2
+    },
+    {
+      "email": "trung2@gmail.com",
+      "password": "$2a$10$e3xVuZAVn2GouBkC73P0ie0IFm3bZoyGHGUY4JhHIUTYJD86M0eA6",
+      "id": 3
     }
   ]
 }
