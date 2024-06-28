@@ -17,6 +17,9 @@ export default function Header() {
           <Link to="/login">Login</Link>
         </li>
         <li>
+          <Link to="/admin">Admin</Link>
+        </li>
+        <li>
           <Link to="/register">register</Link>
         </li>
       </ul>
